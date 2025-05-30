@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/mindlinkgrafico.unity
     guid: eba9984d1c9b0094da0204e2a20de2e5
+  - enabled: 0
+    path: Assets/Assets/BrainLinkBlueToothSDK/Scene/Scene1.unity
+    guid: 6a2002c7462b6ca4790ddbe8533f2d91
+  - enabled: 0
+    path: Assets/Assets/BrainLinkBlueToothSDK/Scene/Scene2.unity
+    guid: 552f15d2fb3a4274c9468eec7bfe5c0e
   m_configObjects: {}
