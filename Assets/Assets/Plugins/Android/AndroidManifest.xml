@@ -1,32 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.lcy.thinkgear">
-	<!-- Para Android < 12 -->
+    package="com.yourcompany.yourappname">
+
+	<!-- Permissões Bluetooth -->
 	<uses-permission android:name="android.permission.BLUETOOTH" />
 	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+
+	<!-- Permissões de localização (necessárias para scan BLE) -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-	<!-- Para Android 12+ -->
-	<uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation"/>
+	<!-- Permissões novas para Android 12+ (se necessário, dependendo do targetSdkVersion) -->
+	<uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />
 	<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 	<uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
 
-	<uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+	<!-- Declaração de features -->
+	<uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
+	<uses-feature android:name="android.hardware.location.gps" android:required="false" />
 
 	<application
         android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true">
-
+        android:theme="@style/AppTheme">
 		<activity
-            android:name=".UnityMainActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:label="@string/app_name" >
+            android:name="com.yourcompany.yourappname.MyUnityPlayerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape">
 			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
-
-		<service android:name=".ThinkGearBLEService" />
 	</application>
+
 </manifest>

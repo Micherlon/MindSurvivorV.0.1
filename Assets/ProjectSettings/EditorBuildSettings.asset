@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/BrainLinkBlueToothSDK/Scene/BrainLinkDemo.unity
+    guid: a98186be26be84929b06d0f1ab9a345e
   m_configObjects: {}
